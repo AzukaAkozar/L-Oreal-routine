@@ -5,8 +5,7 @@
    AI answers. If left blank, the chat falls back to a simple
    built-in responder so the page still works without a key.
 ========================================================= */
-const WORKER_URL = ""; // e.g. "https://85b388d0.loreal-advisor-azukaakozar-workers.pages.dev"
-
+const WORKER_URL = ""; // e.g. "https://loreal-advisor-azukaakozar-workers.pages.dev"
 /* =========================================================
    PRODUCT DATA
    Brands shown are real L'Oréal Group brands (CeraVe, La
