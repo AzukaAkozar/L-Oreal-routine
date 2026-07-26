@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>L'Oréal | Routine Builder</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wordmark">L&rsquo;ORÉAL</div>
+    <div class="tagline">Routine Builder</div>
+  </header>
+
+  <main class="app">
+
+    <!-- Search + category filter -->
+    <section class="controls">
+      <div class="search-box">
+        <span class="icon">&#128269;</span>
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+      <div class="category-box">
+        <select id="categorySelect">
+          <option value="all">All Categories</option>
+          <option value="Cleanser">Cleansers</option>
+          <option value="Moisturizer">Moisturizers</option>
+          <option value="Serum">Serums &amp; Treatments</option>
+          <option value="Sunscreen">Sunscreen</option>
+          <option value="Eye Care">Eye Care</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Product grid -->
+    <section class="product-section">
+      <div id="productGrid" class="product-grid"></div>
+      <button id="showMoreBtn" class="show-more">Show More Products</button>
+    </section>
+
+    <!-- Selected products -->
+    <section class="selected-section">
+      <h2>Selected Products</h2>
+      <div id="selectedChips" class="selected-chips">
+        <p class="empty-state">Select products above to build your routine.</p>
+      </div>
+      <button id="generateBtn" class="generate-btn">&#10024; Generate Routine</button>
+    </section>
+
+    <!-- Routine + chat -->
+    <section class="routine-section">
+      <div class="routine-panel">
+        <h2>About Your Routine</h2>
+        <p class="routine-sub">Get personalized advice and answers about your skincare routine.</p>
+        <div id="routineOutput" class="routine-output">
+          <p class="empty-state">Your generated AM/PM routine will appear here.</p>
+        </div>
+
+        <div class="chat-log" id="chatLog"></div>
+
+        <form id="chatForm" class="chat-input-row">
+          <input type="text" id="chatInput" placeholder="Ask about your routine..." autocomplete="off" />
+          <button type="submit" class="send-btn" aria-label="Send">&#9654;</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 L&rsquo;Oréal. Concept demo &mdash; not affiliated with L&rsquo;Oréal S.A.</span>
+    <span class="footer-links"><a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Use</a> &middot; <a href="#">Contact</a></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+:root {
+  --loreal-red: #e2001a;
+  --loreal-red-dark: #b40015;
+  --ink: #1a1a1a;
+  --paper: #ffffff;
+  --bg-soft: #f7f5f2;
+  --border: #e2ddd6;
+  --muted: #6f6a64;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* Header */
+.site-header {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding: 28px 16px 22px;
+}
+.wordmark {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+.tagline {
+  margin-top: 4px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Layout */
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--paper);
+}
+.search-box .icon { margin-right: 8px; opacity: .55; font-size: 14px; }
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+.category-box select {
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+@media (max-width: 620px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+  background: var(--paper);
+  transition: border-color .15s ease, background .15s ease;
+}
+.product-card:hover { border-color: var(--loreal-red); }
+.product-card.selected {
+  border-color: var(--loreal-red);
+  background: #fff5f5;
+}
+.product-swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 700;
+}
+.product-info { flex: 1; min-width: 0; }
+.product-brand {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+.product-name {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+.product-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: transparent;
+}
+.product-card.selected .product-check {
+  background: var(--loreal-red);
+  border-color: var(--loreal-red);
+  color: #fff;
+}
+
+.show-more {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Selected section */
+.selected-section {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.selected-section h2 { font-size: 16px; margin: 0 0 12px; }
+.selected-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 20px;
+  margin-bottom: 16px;
+}
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.chip button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1;
+}
+.empty-state { color: var(--muted); font-size: 13px; margin: 0; }
+
+.generate-btn {
+  background: var(--loreal-red);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.generate-btn:hover { background: var(--loreal-red-dark); }
+.generate-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Routine panel */
+.routine-section { margin-top: 32px; }
+.routine-panel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.routine-panel h2 { font-size: 16px; margin: 0 0 4px; }
+.routine-sub { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+
+.routine-output {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.routine-output h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 14px 0 6px;
+}
+.routine-output h3:first-child { margin-top: 0; }
+.routine-output ol { margin: 0; padding-left: 18px; }
+.routine-output li { margin-bottom: 4px; }
+
+.chat-log {
+  max-height: 220px;
+  overflow-y: auto;
+  margin: 10px 0;
+}
+.chat-msg {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  max-width: 85%;
+  line-height: 1.4;
+}
+.chat-msg.user {
+  background: var(--loreal-red);
+  color: #fff;
+  margin-left: auto;
+}
+.chat-msg.bot {
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.chat-input-row input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  outline: none;
+}
+.chat-input-row input:focus { border-color: var(--loreal-red); }
+.send-btn {
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 42px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.send-btn:hover { background: var(--loreal-red); }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-links a { color: var(--muted); margin: 0 4px; }
