@@ -5,7 +5,7 @@
    AI answers. If left blank, the chat falls back to a simple
    built-in responder so the page still works without a key.
 ========================================================= */
-const WORKER_URL = ""; // e.g. "https://your-worker.your-subdomain.workers.dev"
+const WORKER_URL = ""; // e.g. "https://85b388d0.loreal-advisor-azukaakozar-workers.pages.dev"
 
 /* =========================================================
    PRODUCT DATA
